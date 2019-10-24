@@ -1,0 +1,21 @@
+<?php
+
+
+function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the block module.
+    case 'help.page.hello':
+      return '<p>' . t('Page d\'aide du module hello') . '</p>';
+  }
+
+
+}
+function hello_cron() {
+  \Drupal::messenger()->addMessage(t('Message du hook_cron'));
+}
+
+function hello_user_login(\Drupal\User\UserInterface $account){
+  \Drupal::messenger()->addMessage(t('Bienvenu %name !',
+    ['%name' => $account->getAccountName()]
+  ));
+}
