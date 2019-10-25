@@ -1,4 +1,4 @@
 entity.node.hello:
-  title: 'Hi!'
+  title: 'Hi'
   group: node
   route_name: hello.hello

@@ -5,7 +5,7 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
   switch ($route_name) {
     // Main module help for the block module.
     case 'help.page.hello':
-      return '<p>' . t('Page d\'aide du module hello') . '</p>';
+      return '<p>' . t('Page d\'aide du module hello.') . '</p>';
   }
 
 
