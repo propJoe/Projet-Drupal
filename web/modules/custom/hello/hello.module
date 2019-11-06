@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Database\Database;
+use Drupal\Core\User\UserInterface;
 
 function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
   switch ($route_name) {
@@ -13,9 +15,34 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
 function hello_cron() {
   \Drupal::messenger()->addMessage(t('Message du hook_cron'));
 }
-
+/**
+* Implements hook_user_login().
+*/
 function hello_user_login(\Drupal\User\UserInterface $account){
   \Drupal::messenger()->addMessage(t('Bienvenu %name !',
     ['%name' => $account->getAccountName()]
   ));
+  \Drupal::database()->insert('hello_user_statistics')->fields([
+  	'time' => REQUEST_TIME,
+  	'uid' => $account->id(),
+  	'action' => 1,
+  ])->execute();
+}
+/**
+* Implements hook_user_logout().
+*/
+function hello_user_logout(\Drupal\Core\Session\AccountProxy $account){
+ 
+  \Drupal::database()->insert('hello_user_statistics')->fields([
+  	'time' => REQUEST_TIME,
+  	'uid' => $account->id(),
+  	'action' => 0,
+  ])->execute();
+}
+
+/**
+* Implements hook_user_delete().
+*/
+function hello_user_delete(\Drupal\User\UserInterface $account){
+  \Drupal::database()->delete('hello_user_statistics')->condition(['uid', $user->id()])->execute();
 }
