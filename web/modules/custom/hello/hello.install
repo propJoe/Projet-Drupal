@@ -51,3 +51,7 @@ function hello_update_8001()
 		);
 	$schema->addField('hello_user_statistics','action', $action);
 }
+
+function hello_uninstall(){
+    \Drupal::state()->delete('hello_last_submission_time');
+}

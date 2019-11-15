@@ -18,7 +18,31 @@ hello.hello2:
 hello.user_statistics:
   path: '/user/{user}/statistics'
   defaults:
-    _title: 'User statistics'
+    _title: 'Connection statistics'
     _controller: '\Drupal\hello\Controller\HelloUserController::content'
   requirements:
-    _access: 'TRUE'
+    _access_hello: '48'
+
+hello.form:
+  path: '/hello/form'
+  defaults:
+    _title: 'Calculator'
+    _form: '\Drupal\hello\Form\HelloForm'
+  requirements:
+    _permission: 'access hello'
+
+hello.admin_form:
+  path: '/admin/config/hello'
+  defaults:
+    _title: 'User statistics'
+    _form: '\Drupal\hello\Form\AdminForm'
+  requirements:
+    _permission: 'administer hello'
+
+hello.access:
+  path: '/hello_access'
+  default:
+    _controller: '\Drupal\hello\Controller\HelloAccessController::content'
+    _title: 'Hello access'
+  requirements:
+    _access_hello: 'param'

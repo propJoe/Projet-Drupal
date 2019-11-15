@@ -1,7 +1,9 @@
 <?php
 namespace Drupal\hello\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
- 
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+
 /**
 * Provides a hello block.
 *
@@ -26,4 +28,7 @@ class SessionBlock extends BlockBase {
 			]
 		];
 	}
+	protected function blockAccess(AccountInterface $account){
+	    return AccessResult::allowedIfHasPermission($account, 'access hello');
+    }
 }

@@ -1,0 +1,9 @@
+access hello:
+  title: 'Visibilité du formulaire calculator'
+  description: 'Accès au block formulaire calculator.'
+  restrict access: 'true'
+
+administer hello:
+  title: 'Visibilité du block Session block'
+  description: 'Accès au block Session block.'
+  restrict access: 'true'
