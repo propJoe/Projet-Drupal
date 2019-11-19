@@ -1,0 +1,36 @@
+<?php
+
+function annonce_Schema()
+{
+    $schema['annonce_user_views'] = [
+        'description' => 'Annonce user views.',
+        'fields' => [
+            'id' => [
+                'description' => 'Primary Key: Unique history ID.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'time' => [
+                'description' => 'Timestamp of user action.',
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'uid' => [
+                'type' => 'int',
+                'description' => "Store user ID.",
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'aid' => [
+                'type' => 'int',
+                'description' => 'ajout de l\'annonce vue',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+    return $schema;
+}
