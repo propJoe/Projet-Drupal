@@ -1,0 +1,5 @@
+name: 'date_condition'
+type: module
+description: 'Date condition plugin'
+core: 8.x
+package: 'Custom'

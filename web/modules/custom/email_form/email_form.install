@@ -1,0 +1,28 @@
+<?php
+
+function email_form_Schema()
+{
+    $schema['email_form_node_subscriber'] = [
+        'description' => 'Stores user mails.',
+        'fields' => [
+            'id' => [
+                'description' => 'Primary Key: Unique history ID.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'nid' => [
+                'type' => 'int',
+                'description' => "Store node ID.",
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255,
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+    return $schema;
+}

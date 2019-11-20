@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+function email_form_mail($key, &$message, $params){
+    switch($key){
+        case 'node_mail':
+            $message['from'] = 'brams-91@hotmail.fr';
+            $message['subject'] = t('Node update');
+            $message['body'][] = t('test');
+            break;
+    }
+}
+
+
+function email_form_node_update(NodeInterface $node){
+    // "efns" est l'allias de la table email_form_node_subscriber
+    $emails = \Drupal::database()->select('email_form_node_subscriber', 'efns')->fields(
+        'efns', ['email']
+    )->condition(
+        'nid', $node->id()
+    )->execute();
+    $mail_manager = \Drupal::service('plugin.manager.mail');
+    foreach($emails as $email){
+        $mail_manager->mail('email_form', 'node_mail',$email->email,'en',[],NULL,TRUE);
+    }
+}
