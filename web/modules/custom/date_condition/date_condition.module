@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains date_condition.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function date_condition_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the date_condition module.
+    case 'help.page.date_condition':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Date condition plugin') . '</p>';
+      return $output;
+
+    default:
+  }
+}
