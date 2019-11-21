@@ -1,0 +1,16 @@
+uuid: 6200cc43-a2a5-43a3-bb11-30c4dece29e8
+langcode: fr
+status: false
+dependencies: {  }
+id: prod
+label: PROD
+description: ''
+folder: ../config/prod
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - system.site
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

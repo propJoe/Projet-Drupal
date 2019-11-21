@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1242d419d1e5f186d0c4f08f41eb578",
+    "content-hash": "16a217f669f6351b59b7a1251d5904b1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1153,6 +1153,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -2825,6 +2826,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Fix css bug": "https://www.drupal.org/files/issues/2018-12-08/toolbar_themes-padding-issue-2981847-7.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
