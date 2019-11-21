@@ -10,12 +10,17 @@ function hello_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route
     case 'help.page.hello':
       return '<p>' . t('Page d\'aide du module hello.') . '</p>';
   }
-
-
 }
 function hello_cron() {
   \Drupal::messenger()->addMessage(t('Message du hook_cron'));
 }
+
+function hello_form_alter(array &$form, FormStateInterface $formState, $form_id){
+    if($form_id == 'node_article_form'){
+        $form['revision_log']['#access'] = False;
+    }
+}
+
 /**
 * Implements hook_user_login().
 */
