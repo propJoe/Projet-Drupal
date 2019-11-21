@@ -1,0 +1,10 @@
+uuid: b5fc49ae-df25-4209-973b-3a5f949d542c
+langcode: fr
+status: true
+dependencies: {  }
+id: webmaster
+label: Webmaster
+weight: 3
+is_admin: null
+permissions:
+  - 'add annonce entities'

@@ -1,0 +1,34 @@
+uuid: d439929e-fe15-41b5-b27c-211c938d70c0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - date_condition
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: bartik_main_menu
+theme: bartik
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  date_condition:
+    id: date_condition
+    date_start: ''
+    date_end: '2019-11-22'
+    negate: null
+    context_mapping: {  }

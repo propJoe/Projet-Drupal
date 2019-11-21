@@ -1,0 +1,20 @@
+uuid: 5da794b1-863d-4fd9-8617-dedfe1d08070
+langcode: fr
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+id: sessionblock
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: session_block
+settings:
+  id: session_block
+  label: 'Session Block'
+  provider: hello
+  label_display: visible
+visibility: {  }
