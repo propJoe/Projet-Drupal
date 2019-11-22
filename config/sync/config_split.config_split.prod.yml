@@ -6,8 +6,7 @@ id: prod
 label: PROD
 description: ''
 folder: ../config/prod
-module:
-  views_ui: 0
+module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
